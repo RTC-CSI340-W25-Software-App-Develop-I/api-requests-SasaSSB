@@ -21,10 +21,11 @@ app.post("/restaurants", (req, res) => {
     hours: req.body.hours,
     menu: req.body.menu,
   };
-});
 
-push.newRestaurant(restaurant);
-res.status(201).json(newRestaurant);
+  console.log(newRestaurant);
+  restaurants.push(newRestaurant);
+  res.status(201).json(newRestaurant);
+});
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
